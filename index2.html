@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessibilidade e Estilo em Formulários HTML</title>
+    <link rel="shortcut icon" href="https://i.postimg.cc/YCk1KfM8/form-favicon.png" type="image/png">
+    <style>
+        input:focus {
+            border-color: blue;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0,0,255,0.5);
+        }
+
+        .erro {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Acessibilidade e Estilo em Formulários HTML</h1>
+    <a href="index.html">Voltar</a>
+    <br><br>
+    <p>Estilização com CSS (ex.: inputs em foco, mensagens de erro)</p>
+    <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <span class="erro">Por favor, insira um email válido.</span>
+    </form>
+</body>
+</html>
