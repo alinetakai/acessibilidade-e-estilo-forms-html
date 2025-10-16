@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulário Gamificado</title>
+<link rel="shortcut icon" href="https://i.postimg.cc/YCk1KfM8/form-favicon.png" type="image/png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  form {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+
+  fieldset {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    position: relative;
+  }
+
+  legend {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #333;
+    font-size: 1.1em;
+  }
+
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+  }
+
+  input {
+    width: 100%;
+    padding: 10px 35px 10px 10px;
+    margin-top: 5px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: 0.3s all;
+    box-sizing: border-box;
+  }
+
+  /* Ícones dentro do input */
+  .input-wrapper {
+    position: relative;
+  }
+
+  .input-wrapper i {
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    transform: translateY(-50%);
+    font-size: 1.1em;
+    color: #ccc;
+    pointer-events: none;
+    transition: 0.3s all;
+  }
+
+  input:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 8px rgba(0,123,255,0.4);
+  }
+
+  input:valid {
+    border-color: #28a745;
+  }
+
+  input:valid + i {
+    color: #28a745;
+    transform: translateY(-50%) rotate(360deg);
+  }
+
+  input:invalid {
+    border-color: #dc3545;
+  }
+
+  input:invalid + i {
+    color: #dc3545;
+    transform: translateY(-50%) rotate(-20deg);
+  }
+
+  .erro {
+    color: #dc3545;
+    font-size: 0.85em;
+    margin-top: 3px;
+    display: none;
+  }
+
+  input:invalid ~ .erro {
+    display: block;
+  }
+
+  button {
+    margin-top: 10px;
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #007BFF, #00CFFF);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s all;
+  }
+
+  button:hover {
+    background: linear-gradient(45deg, #0056b3, #00a1c7);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+</style>
+</head>
+<body>
+
+<form>
+  <fieldset>
+    <legend>Informações Pessoais</legend>
+
+    <div class="input-wrapper">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+      <i class="fa-solid fa-user"></i>
+      <span class="erro">O nome é obrigatório.</span>
+    </div>
+
+    <div class="input-wrapper">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required>
+      <i class="fa-solid fa-envelope"></i>
+      <span class="erro">Insira um email válido.</span>
+    </div>
+
+    <div class="input-wrapper">
+      <label for="idade">Idade:</label>
+      <input type="number" id="idade" name="idade" min="1" max="120" placeholder="Digite sua idade" required>
+      <i class="fa-solid fa-calendar"></i>
+      <span class="erro">Idade entre 1 e 120 anos.</span>
+    </div>
+
+  </fieldset>
+
+  <fieldset>
+    <legend>Senha</legend>
+
+    <div class="input-wrapper">
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" placeholder="Crie uma senha" minlength="6" required>
+      <i class="fa-solid fa-lock"></i>
+      <span class="erro">A senha deve ter no mínimo 6 caracteres.</span>
+    </div>
+
+  </fieldset>
+
+  <button type="submit">Enviar</button>
+</form>
+
+</body>
+</html>
